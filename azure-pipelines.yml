@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 variables:
   YARN_CACHE_FOLDER: $(Pipeline.Workspace)/.yarn
-  
+
 pool:
   vmImage: 'macOS-10.13'
 
@@ -34,7 +34,7 @@ steps:
     artifactName: 'drop'
     artifactType: 'container'
   displayName: Publish artifacts
-steps:
+
 - task: Cache@2
   inputs:
     key: yarn | $(Agent.OS) | yarn.lock
